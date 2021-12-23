@@ -3,8 +3,8 @@
 
   <p>{{ book.description }}</p>
 
-  <div>
-    <a class="button-edit" [routerLink]="['/books', 'edit', book.id]">Edit</a>
+  <div *ngIf="hasPermissions">
+    <a class="button-edit" [routerLink]="['/main', 'books', 'edit', book.id]">Edit</a>
     <button class="button-delete" (click)="onDelete()">Delete</button>
   </div>
 

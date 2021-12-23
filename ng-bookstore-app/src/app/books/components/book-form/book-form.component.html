@@ -1,4 +1,4 @@
-<a routerLink="/books">Back to list</a>
+<a routerLink="/main/books">Back to list</a>
 
 <h3>{{ formGroup?.get('id')?.value ? 'Edit book' : 'Add new book' }}</h3>
 
@@ -10,6 +10,11 @@
     <small style="color: red"
            *ngIf="formGroup.get('title')?.touched && formGroup.get('title')?.hasError('required')">
       This field is required
+    </small>
+
+    <small style="color: red"
+           *ngIf="formGroup.get('title')?.touched && formGroup.get('title')?.hasError('patternTitle')">
+      Title should contain at least one number
     </small>
   </div>
 

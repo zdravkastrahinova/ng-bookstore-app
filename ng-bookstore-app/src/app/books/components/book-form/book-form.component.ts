@@ -5,6 +5,7 @@ import { BooksService } from '../../services/books.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap, takeUntil } from 'rxjs/operators';
 import { of, Subject } from 'rxjs';
+import { title } from '../../validators/title.validator';
 
 @Component({
   selector: 'app-book-form',
@@ -64,7 +65,7 @@ export class BookFormComponent implements OnInit, OnDestroy {
 
     request$.subscribe({
       next: () => {
-        this.router.navigate(['/books']);
+        this.router.navigate(['/main', 'books']);
       }
     });
   }
@@ -72,7 +73,7 @@ export class BookFormComponent implements OnInit, OnDestroy {
   private buildForm(book?: Book): void {
     this.formGroup = this.fb.group({
       id: book?.id,
-      title: [book?.title || '', [Validators.required]],
+      title: [book?.title || '', [Validators.required, title()]],
       description: [book?.description || ''],
       author: [book?.author || '', [Validators.required]]
     });

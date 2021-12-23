@@ -1,7 +1,7 @@
 <div>
   <h2>Books</h2>
 
-  <a routerLink="/books/edit">Add new</a>
+  <a *ngIf="hasPermissions" routerLink="/main/books/edit">Add new</a>
 
   <section>
     <app-book-item *ngFor="let book of books"

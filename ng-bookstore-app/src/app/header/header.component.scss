@@ -8,6 +8,14 @@
       list-style: none;
       color: black;
       padding: 15px;
+
+      &.stretched {
+        flex-grow: 1;
+      }
+
+      &.pointer {
+        cursor: pointer;
+      }
     }
   }
 
