@@ -1,0 +1,16 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Book Updated",
+      "description": "Description Updated",
+      "author": "Author Updated"
+    },
+    {
+      "id": 2,
+      "title": "Book 2",
+      "description": "Description 2",
+      "author": "Author 2"
+    }
+  ]
+}

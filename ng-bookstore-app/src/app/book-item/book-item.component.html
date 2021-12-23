@@ -1,0 +1,11 @@
+<article>
+  <h3>{{ book.title }}</h3>
+
+  <p>{{ book.description }}</p>
+
+  <div>
+    <a class="button-edit" [routerLink]="['/books', 'edit', book.id]">Edit</a>
+    <button class="button-delete" (click)="onDelete()">Delete</button>
+  </div>
+
+</article>
