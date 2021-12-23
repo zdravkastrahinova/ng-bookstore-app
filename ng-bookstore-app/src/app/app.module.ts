@@ -4,15 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CommonModule } from '@angular/common';
-import { Route, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
-const routes: Route[] = [
-  {
-    path: 'main',
-    loadChildren: () => import('./books/books.module').then(m => m.BooksModule)
-  }
-];
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +16,7 @@ const routes: Route[] = [
     BrowserModule,
     CommonModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
